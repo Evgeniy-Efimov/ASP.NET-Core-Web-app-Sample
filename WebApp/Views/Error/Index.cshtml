@@ -1,0 +1,14 @@
+﻿@using WebApp.ViewModels
+
+@model ErrorViewModel
+
+@{
+    ViewData["Title"] = "Error";
+    Layout = "~/Views/Shared/_LayoutAuth.cshtml";
+}
+
+<h3 class="text-warning">An error occurred while processing your request</h3>
+
+<h5 class="text-dark">@Model.Message</h5>
+
+<p class="text-muted">@Model.Details</p>

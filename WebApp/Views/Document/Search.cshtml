@@ -1,0 +1,17 @@
+﻿@using WebApp.Helpers;
+@using WebApp.ViewModels;
+
+@model SearchViewModel
+
+@{
+    ViewData["Title"] = "Documents";
+}
+
+@using (Html.BeginForm("Search", "Document", FormMethod.Post))
+{
+    @Html.Partial("SearchForm", Model)
+}
+
+@Html.Partial("DocumentGrid", Model.Documents)
+
+@PaginationHelper.GetPaginator(Html, Url.Action("Search", "Document"), Model, "SearchForm", Model.Page, Model.TotalPages)

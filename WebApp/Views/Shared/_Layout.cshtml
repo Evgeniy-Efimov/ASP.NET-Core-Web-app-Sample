@@ -1,0 +1,63 @@
+﻿@{
+    var authorizedUser = (AuthorizedUser)ViewBag.AuthorizedUser;
+    var title = ViewData["Title"];
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@title - WebApp</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/icon/bootstrap-icons.css" />
+    <link rel="stylesheet" href="~/lib/jquery-ui/jquery-ui.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <div id="loader" class="loader"></div>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container-xl">
+                <a class="navbar-brand" asp-area="" asp-controller="Document" asp-action="Index">WebApp</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li title="Documents" class="nav-item">
+                            @Html.ActionLink("Documents", "", "Document", null, new { @class = "nav-link" })
+                        </li>
+                    </ul>
+                </div>
+                <span class="navbar-text d-flex">
+                    Hello, @authorizedUser.FullName
+                    @Html.ActionLink("Logout", "Logout", "Auth", null, new { @class = "nav-link", @style = "margin-left: 10px;" })
+                </span>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; @DateTime.Now.Year - WebApp
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-ui/jquery-ui.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+
+<script>
+    $(document).ready(function () {
+        HighlightActiveNavbarLink('@title');
+    });
+</script>

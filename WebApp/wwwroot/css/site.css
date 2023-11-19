@@ -1,0 +1,222 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    padding-top: 70px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+/* Paginator */
+.paginator {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.pages {
+    float: right;
+}
+
+    .pages ul li {
+        display: block;
+        float: left;
+    }
+
+        .pages ul li button {
+            padding: 0;
+            margin: 0 2px 0 5px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            background: none;
+        }
+
+            .pages ul li button:hover {
+                color: #1b6ec2;
+                border: 0;
+            }
+
+    .pages li.page-current button {
+        color: #1b6ec2;
+        border: 0;
+    }
+
+/* Project styles */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button,
+input[type='number'] {
+    -webkit-appearance: none;
+    margin: 0;
+    -moz-appearance: textfield !important;
+}
+
+.hidden {
+    display: none;
+}
+
+.center-align {
+    text-align: center;
+}
+
+.btn-login {
+    width: 100%;
+}
+
+.container-login {
+    max-width: 400px;
+    margin-top: 50px;
+}
+
+.search-form {
+    width: 100%;
+}
+
+    .search-form label {
+        padding: 1px 5px 1px 5px;
+        margin-bottom: 0px !important;
+        border-radius: 5px;
+        color: white;
+    }
+
+    .search-form th {
+        padding: 2px 10px 2px 10px;
+        width: 25%;
+    }
+
+.search-form td {
+    padding: 0px 10px 4px 10px;
+}
+
+.search-form input, .search-form select {
+    height: 32px;
+    font-size: 16px;
+    padding-top: 3px;
+}
+
+.clear {
+    width: 150px;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    margin: 10px 0px 0px 10px;
+    display: block;
+}
+
+.search {
+    width: 40%;
+    margin: 0 auto;
+    display: block;
+}
+
+.search-result {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    .search-result td, .search-result th {
+        font-size: 16px;
+        color: #333333;
+        border: 1px solid #ced4da;
+        padding: 2px 7px 2px 7px;
+    }
+
+    .search-result label {
+        margin-bottom: 0px;
+    }
+
+.barcode {
+    width: 38%;
+}
+
+.regnumber {
+    width: 28%;
+}
+
+.creationdate {
+    width: 18%;
+}
+
+.documenttype {
+    width: 8%;
+}
+
+.link {
+    width: 8%;
+}
+
+/* Loader */
+.loader {
+    background: url(../img/loader.gif) center no-repeat;
+    min-width: 64px;
+    min-height: 64px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #fff;
+    opacity: 0.7;
+    z-index: 500;
+    display: none;
+}

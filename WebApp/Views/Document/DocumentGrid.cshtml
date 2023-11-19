@@ -1,0 +1,34 @@
+﻿@using WebApp.ViewModels
+
+@model IEnumerable<DocumentViewModel>
+
+@if (Model.Any())
+{
+    <table class="search-result">
+        <thead>
+            <tr>
+                <th class="barcode">@Html.LabelFor(x => x.First().BarCode)</th>
+                <th class="regnumber">@Html.LabelFor(x => x.First().RegNumber)</th>
+                <th class="creationdate center-align">@Html.LabelFor(x => x.First().CreationDate)</th>
+                <th class="documenttype center-align">@Html.LabelFor(x => x.First().DocumentType)</th>
+                <th class="link center-align">Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var document in Model)
+            {
+                <tr>
+                    <td>@document.BarCode</td>
+                    <td>@document.RegNumber</td>
+                    <td class="center-align">@(document.CreationDate?.ToShortDateString() ?? string.Empty)</td>
+                    <td class="center-align">@document.DocumentType</td>
+                    <td class="center-align"><a target="_blank" href="#"><i class="bi bi-cloud-download"></i></a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="center-align search-result">No documents were found</div>
+}

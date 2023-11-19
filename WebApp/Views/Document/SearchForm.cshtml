@@ -1,0 +1,36 @@
+﻿@using WebApp.Helpers;
+@using WebApp.ViewModels;
+
+@model SearchViewModel
+
+<table class="search-form">
+    <thead>
+        <tr>
+            <th>@Html.LabelFor(x => x.RegNumber, new { @class="bg-primary" })</th>
+            <th>@Html.LabelFor(x => x.DocumentTypeId, new { @class="bg-primary" })</th>
+            <th>@Html.LabelFor(x => x.BarCode, new { @class="bg-success" })</th>
+            <th>@Html.LabelFor(x => x.CreationDate, new { @class="bg-warning" })</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Html.EditorFor(x => x.RegNumber, new { htmlAttributes = new { @class="form-control" } })</td>
+            <td>
+                <select name="DocumentTypeId" class="form-control" asp-items="@Model.DocumentTypes">
+                    @if (Model.DocumentTypeId.HasValue)
+                    {
+                        <option></option>
+                    }
+                    else
+                    {
+                        <option selected></option>
+                    }
+                </select>
+            </td>
+            <td>@Html.EditorFor(x => x.BarCode, new { htmlAttributes = new { @class="form-control" } })</td>
+            <td><input name="CreationDate" class="form-control datepicker" value="@(Model.CreationDate?.ToShortDateString() ?? string.Empty)" /></td>
+        </tr>
+    </tbody>
+</table>
+<button type="button" class="btn btn-light clear">Clear form</button>
+<button type="submit" class="btn btn-primary search" id="search-button">Search</button>
